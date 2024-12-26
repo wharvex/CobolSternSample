@@ -11,14 +11,14 @@
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
       * Input file name: `emp-dat`.
-      * Output file name: `printer`.
+      * Output file name: `PRINTER`.
        FILE-CONTROL.   
            SELECT employee-data ASSIGN TO emp-dat
       *------- This line is important, and is not in the textbook.
       *------- Without it, the GNUCobol compiler interprets newline
       *------- characters as part of the data rows of a file.
                ORGANIZATION IS LINE SEQUENTIAL.
-           SELECT payroll-listing ASSIGN TO printer.
+           SELECT payroll-listing ASSIGN TO PRINTER.
        DATA DIVISION.
        FILE SECTION.
        FD employee-data LABEL RECORDS ARE STANDARD.
